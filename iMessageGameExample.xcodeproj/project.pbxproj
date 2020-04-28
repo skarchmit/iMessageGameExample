@@ -3,16 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9501B1A124561C6B00D6C8D8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9501B1A024561C6B00D6C8D8 /* GameScene.sks */; };
+		952F452C2457EB90001B2605 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F452B2457EB90001B2605 /* GameScene.swift */; };
+		952F452E2457EEE1001B2605 /* NewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F452D2457EEE1001B2605 /* NewGameScene.swift */; };
 		95400CBB2453F617003A320B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95400CBA2453F617003A320B /* Assets.xcassets */; };
 		95400CC22453F617003A320B /* iMessageGameExample MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 95400CC12453F617003A320B /* iMessageGameExample MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		95400CC72453F617003A320B /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95400CC62453F617003A320B /* Messages.framework */; };
 		95400CCA2453F617003A320B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95400CC92453F617003A320B /* MessagesViewController.swift */; };
 		95400CCD2453F617003A320B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95400CCB2453F617003A320B /* MainInterface.storyboard */; };
 		95400CCF2453F618003A320B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95400CCE2453F618003A320B /* Assets.xcassets */; };
+		95400CDC2453F795003A320B /* iMessageGame in Frameworks */ = {isa = PBXBuildFile; productRef = 95400CDB2453F795003A320B /* iMessageGame */; };
+		957699242457E38B00156D8F /* NewGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 957699232457E38B00156D8F /* NewGameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9501B1A024561C6B00D6C8D8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		952F452B2457EB90001B2605 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		952F452D2457EEE1001B2605 /* NewGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameScene.swift; sourceTree = "<group>"; };
+		952F452F2458148F001B2605 /* Pulse.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Pulse.sks; path = "/Users/serge/Git/iMessageGameExample/iMessageGameExample MessagesExtension/Pulse.sks"; sourceTree = "<absolute>"; };
 		95400CB72453F60A003A320B /* iMessageGameExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMessageGameExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95400CBA2453F617003A320B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95400CBC2453F617003A320B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +58,7 @@
 		95400CCC2453F617003A320B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		95400CCE2453F618003A320B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95400CD02453F618003A320B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		957699232457E38B00156D8F /* NewGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NewGameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95400CDC2453F795003A320B /* iMessageGame in Frameworks */,
 				95400CC72453F617003A320B /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,10 +113,15 @@
 		95400CC82453F617003A320B /* iMessageGameExample MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				952F452F2458148F001B2605 /* Pulse.sks */,
 				95400CC92453F617003A320B /* MessagesViewController.swift */,
 				95400CCB2453F617003A320B /* MainInterface.storyboard */,
 				95400CCE2453F618003A320B /* Assets.xcassets */,
 				95400CD02453F618003A320B /* Info.plist */,
+				9501B1A024561C6B00D6C8D8 /* GameScene.sks */,
+				952F452B2457EB90001B2605 /* GameScene.swift */,
+				952F452D2457EEE1001B2605 /* NewGameScene.swift */,
+				957699232457E38B00156D8F /* NewGameScene.sks */,
 			);
 			path = "iMessageGameExample MessagesExtension";
 			sourceTree = "<group>";
@@ -143,6 +159,9 @@
 			dependencies = (
 			);
 			name = "iMessageGameExample MessagesExtension";
+			packageProductDependencies = (
+				95400CDB2453F795003A320B /* iMessageGame */,
+			);
 			productName = "iMessageGameExample MessagesExtension";
 			productReference = 95400CC12453F617003A320B /* iMessageGameExample MessagesExtension.appex */;
 			productType = "com.apple.product-type.app-extension.messages";
@@ -173,6 +192,9 @@
 				Base,
 			);
 			mainGroup = 95400CB02453F60A003A320B;
+			packageReferences = (
+				95400CDA2453F795003A320B /* XCRemoteSwiftPackageReference "iMessageGame" */,
+			);
 			productRefGroup = 95400CB82453F60A003A320B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -196,6 +218,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9501B1A124561C6B00D6C8D8 /* GameScene.sks in Resources */,
+				957699242457E38B00156D8F /* NewGameScene.sks in Resources */,
 				95400CCF2453F618003A320B /* Assets.xcassets in Resources */,
 				95400CCD2453F617003A320B /* MainInterface.storyboard in Resources */,
 			);
@@ -208,7 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				952F452C2457EB90001B2605 /* GameScene.swift in Sources */,
 				95400CCA2453F617003A320B /* MessagesViewController.swift in Sources */,
+				952F452E2457EEE1001B2605 /* NewGameScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +475,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95400CDA2453F795003A320B /* XCRemoteSwiftPackageReference "iMessageGame" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/skarchmit/iMessageGame";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95400CDB2453F795003A320B /* iMessageGame */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95400CDA2453F795003A320B /* XCRemoteSwiftPackageReference "iMessageGame" */;
+			productName = iMessageGame;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 95400CB12453F60A003A320B /* Project object */;
 }
