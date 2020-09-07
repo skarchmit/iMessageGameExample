@@ -16,6 +16,10 @@ class MessagesViewController: iMessageGame.MessagesVC {
 		print ("viewDidLoad MessagesViewController")
 		self.gameScene = GameScene(fileNamed: "GameScene")
 		self.newGameScene = NewGameScene(fileNamed: "NewGameScene")
+        
+//        self.gameScene.gameDelegate = self
+//        self.newGameScene.gameDelegate = self
+        
 		super.viewDidLoad()
 	}
 

@@ -13,6 +13,9 @@ import SpriteKit
 class NewGameScene: SKScene {
 
 	private var button: SKSpriteNode!
+    
+    /// Required to have to connect back to the original VC
+    weak var gameDelegate: iMessageGame.MessagesVC?
 	
 	override func didMove(to view: SKView) {
 		super.willMove(from: view)
@@ -29,7 +32,11 @@ class NewGameScene: SKScene {
 		
 		for node in touchedNode {
 			if node.name == "newGameButton" {
-				// Send
+                if let o = self.gameDelegate {
+                    o.game = Game()
+                    let message = o.composeMessage(caption: "Let's play a game!", summaryText: "Sent a game.")
+                    o.send(message: message, withConfirmation: true)
+                }
 				print ("Button Touched!")
 			}
 		}
