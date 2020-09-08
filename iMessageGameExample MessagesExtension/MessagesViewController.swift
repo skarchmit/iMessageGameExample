@@ -14,12 +14,10 @@ class MessagesViewController: iMessageGame.MessagesVC {
  
 	override func viewDidLoad() {
 		print ("viewDidLoad MessagesViewController")
-		self.gameScene = GameScene(fileNamed: "GameScene")
-		self.newGameScene = NewGameScene(fileNamed: "NewGameScene")
         
-//        self.gameScene.gameDelegate = self
-//        self.newGameScene.gameDelegate = self
-        
+		let activeGameScene = GameScene(fileNamed: "GameScene")
+		let newGameScene = NewGameScene(fileNamed: "NewGameScene")
+        self.scenes = Scenes(active: activeGameScene, new: newGameScene)
 		super.viewDidLoad()
 	}
 
