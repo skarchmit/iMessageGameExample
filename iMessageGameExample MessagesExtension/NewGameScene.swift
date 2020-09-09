@@ -15,7 +15,7 @@ class NewGameScene: iMessageGame.Scene {
     override func didMove(to view: SKView) {
         super.willMove(from: view)
         backgroundColor = #colorLiteral(red: 0.1485076821, green: 0.1634827325, blue: 0.3019607961, alpha: 1)
-        button = childNode(withName: "button") as? SKSpriteNode
+        button = childNode(withName: "newGameButton") as? SKSpriteNode
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
