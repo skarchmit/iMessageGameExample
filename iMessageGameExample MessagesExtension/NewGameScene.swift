@@ -27,6 +27,7 @@ class NewGameScene: iMessageGame.Scene {
         for node in touchedNode {
             if node.name == "newGameButton" {
                 if let d = gameDelegate {
+                    print ("sending game to game delegate.")
                     d.send(caption: "New Game", summaryText: "Sent a Game", withConfirmation: true)
                 }
                 print("Button Touched!")
