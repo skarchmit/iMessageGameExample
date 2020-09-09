@@ -11,12 +11,20 @@ import SpriteKit
 
 
 class GameScene: iMessageGame.Scene {
-	private var button: SKSpriteNode!
+    private var sendTurnButton: SKSpriteNode?
+    private var player1Label: SKLabelNode?
 
     override func didMove(to view: SKView) {
         super.willMove(from: view)
-        backgroundColor = #colorLiteral(red: 0.1485076821, green: 0.1634827325, blue: 0.3019607961, alpha: 1)
-        button = childNode(withName: "sendTurnButton") as? SKSpriteNode
+        self.backgroundColor = #colorLiteral(red: 0.1485076821, green: 0.1634827325, blue: 0.3019607961, alpha: 1)
+        // Identify sprites in sks
+        self.sendTurnButton = childNode(withName: "sendTurnButton") as? SKSpriteNode
+        self.player1Label = childNode(withName: "PlayerLabel") as? SKLabelNode
+        updateObjects()
+    }
+    
+    func updateObjects() {
+        self.player1Label?.text =  "Player1Update"
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -26,7 +34,7 @@ class GameScene: iMessageGame.Scene {
         let touchedNode = nodes(at: location)
 
         for node in touchedNode {
-            if node.name == "sendTurnButton" {
+            if node.name == sendTurnButton?.name {
                 if let d = gameDelegate {
                     print ("sending turn game to game delegate.")
                     d.send(caption: "Played Turn", summaryText: "Played their turn", withConfirmation: false)
