@@ -8,10 +8,7 @@
 import Foundation
 import iMessageGame
 
-class Game: GameWrapper {
+struct Game: Codable {
 
-    public init() {
-        super.init()
-    }
     
 }
