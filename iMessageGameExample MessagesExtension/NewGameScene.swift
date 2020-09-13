@@ -28,7 +28,7 @@ class NewGameScene: iMessageGame.Scene {
             if node.name == "newGameButton" {
                 if let d = gameDelegate {
                     print ("Creating new game")
-                    d.game = Game()
+                    self.gameManager.game = Game()
                     print ("sending game to game delegate.")
                     d.send(caption: "New Game", summaryText: "Sent a Game", withConfirmation: true)
                 }
