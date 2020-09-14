@@ -8,7 +8,16 @@
 import Foundation
 import iMessageGame
 
-struct Game: Codable {
+class ThisGame: iMessageGame.Game {
+    public var a: Int = 5
+    public var b: Int = 6
 
+    func incrementA() {
+        a += 1
+    }
+
+    func incrementB() {
+        b += 1
+    }
     
 }

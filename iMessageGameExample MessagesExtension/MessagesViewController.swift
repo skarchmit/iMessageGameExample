@@ -5,20 +5,27 @@
 //  Created by serge on 4/24/20.
 //
 
-import UIKit
-import Messages
 import iMessageGame
+import Messages
 import SpriteKit
+import UIKit
 
 class MessagesViewController: iMessageGame.MessagesVC {
- 
-	override func viewDidLoad() {
-		print ("viewDidLoad MessagesViewController")
-        
-		let activeGameScene = GameScene(fileNamed: "GameScene")
-		let newGameScene = NewGameScene(fileNamed: "NewGameScene")
-        self.scenes = Scenes(active: activeGameScene, new: newGameScene)
-		super.viewDidLoad()
-	}
+    override var gameType: Game.Type {
+        get {
+            return ThisGame.self
+        } set {}
+    }
 
+    override func viewDidLoad() {
+        print("viewDidLoad MessagesViewController")
+
+        let activeGame = SceneInfo(fileNamed: "GameScene", scene: GameScene.self)
+        let newGame = SceneInfo(fileNamed: "NewGameScene", scene: NewGameScene.self)
+
+        sceneManager.active = activeGame
+        sceneManager.new = newGame
+
+        super.viewDidLoad()
+    }
 }
