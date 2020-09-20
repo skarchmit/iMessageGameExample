@@ -11,6 +11,7 @@ import SpriteKit
 import UIKit
 
 class MessagesViewController: iMessageGame.MessagesVC {
+    /// Override with a custom GameType
     override var gameType: Game.Type {
         get {
             return ThisGame.self
