@@ -19,5 +19,4 @@ class ThisGame: iMessageGame.Game {
     func incrementB() {
         b += 1
     }
-    
 }

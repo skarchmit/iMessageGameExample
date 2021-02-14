@@ -18,7 +18,9 @@
 		95400CDC2453F795003A320B /* iMessageGame in Frameworks */ = {isa = PBXBuildFile; productRef = 95400CDB2453F795003A320B /* iMessageGame */; };
 		A555640025D0D7D30015A743 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A555640225D0D7D30015A743 /* GameScene.sks */; };
 		A5AB35F32505AE480010D4EF /* NewGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A5AB35F22505AE470010D4EF /* NewGameScene.sks */; };
+		A5CBB36125D8A4C5007F2F14 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CBB36025D8A4C5007F2F14 /* Globals.swift */; };
 		A5E351BE2504B517000C2765 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E351BD2504B517000C2765 /* Game.swift */; };
+		A5EC0B8125D8768E00A7B949 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC0B8025D8768E00A7B949 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +61,10 @@
 		95400CD02453F618003A320B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A555640125D0D7D30015A743 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Base; path = Base.lproj/GameScene.sks; sourceTree = "<group>"; };
 		A5AB35F22505AE470010D4EF /* NewGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NewGameScene.sks; sourceTree = "<group>"; };
+		A5CBB36025D8A4C5007F2F14 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		A5E351BB2504982E000C2765 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A5E351BD2504B517000C2765 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		A5EC0B8025D8768E00A7B949 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 				952F452B2457EB90001B2605 /* GameScene.swift */,
 				952F452D2457EEE1001B2605 /* NewGameScene.swift */,
 				A5AB35F22505AE470010D4EF /* NewGameScene.sks */,
+				A5CBB36025D8A4C5007F2F14 /* Globals.swift */,
 			);
 			path = "iMessageGameExample MessagesExtension";
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				A5E351BD2504B517000C2765 /* Game.swift */,
+				A5EC0B8025D8768E00A7B949 /* Player.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,7 +251,9 @@
 			files = (
 				952F452C2457EB90001B2605 /* GameScene.swift in Sources */,
 				95400CCA2453F617003A320B /* MessagesViewController.swift in Sources */,
+				A5CBB36125D8A4C5007F2F14 /* Globals.swift in Sources */,
 				952F452E2457EEE1001B2605 /* NewGameScene.swift in Sources */,
+				A5EC0B8125D8768E00A7B949 /* Player.swift in Sources */,
 				A5E351BE2504B517000C2765 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
