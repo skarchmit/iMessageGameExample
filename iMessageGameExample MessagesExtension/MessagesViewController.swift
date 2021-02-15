@@ -21,11 +21,11 @@ class MessagesViewController: iMessageGame.MessagesVC {
     override func viewDidLoad() {
         print("viewDidLoad MessagesViewController")
 
-        let activeGame = SceneInfo(fileNamed: "GameScene", scene: GameScene.self)
-        let newGame = SceneInfo(fileNamed: "NewGameScene", scene: NewGameScene.self)
+        let activeGame = SceneLoader(fileNamed: "GameScene", scene: GameScene.self, type: .active)
+        let newGame = SceneLoader(fileNamed: "NewGameScene", scene: NewGameScene.self, type: .new)
 
-        sceneManager.active = activeGame
-        sceneManager.new = newGame
+        sceneManager.add(activeGame)
+        sceneManager.add(newGame)
 
         super.viewDidLoad()
     }

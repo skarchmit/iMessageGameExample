@@ -39,5 +39,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>MSSupportedPresentationContexts</key>
+	<array>
+	  <string>MSMessagesAppPresentationContextMessages</string>
+	  <string>MSMessagesAppPresentationContextMedia</string>
+	</array>
 </dict>
 </plist>

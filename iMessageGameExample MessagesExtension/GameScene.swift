@@ -7,62 +7,48 @@
 
 import Foundation
 import iMessageGame
+import Logging
 import SpriteKit
 
 class GameScene: iMessageGame.Scene {
-    private var sendTurnButton: SKSpriteNode?
-    private var playerLabel: SKLabelNode?
-    private var oppenentLabel: SKLabelNode?
-    private var waitingBanner: SKSpriteNode?
-
-    private var canSendGame: Bool {
-        return game.players.current != game.players.yourself && game.players.count >= 2
-    }
+    private var sendTurnButton: SKSpriteNode!
+    private var sceneVariablesInitialized: Bool = false
 
     override var game: Game! {
         didSet {
-            log.info("Received a new game!")
-            updateObjects()
+            if sceneVariablesInitialized {
+                updateObjects()
+                log.info("[GameScene] Game Updated")
+            } else {
+                log.info("didMove will need to update the game variables.")
+            }
         }
     }
 
     override func didMove(to view: SKView) {
+        log.info("Moved to view.")
         super.didMove(to: view)
         backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
 
         // Identify sprites in sks
         sendTurnButton = childNode(withName: "sendTurnButton") as? SKSpriteNode
-        playerLabel = childNode(withName: "PlayerLabel") as? SKLabelNode
-        oppenentLabel = childNode(withName: "OpponentLabel") as? SKLabelNode
-        waitingBanner = childNode(withName: "WaitingBanner") as? SKSpriteNode
 
-        log.info("Updating objects after view")
-//        lockSending = game.players.current != game.players.yourself
+        sceneVariablesInitialized = true
+        // Update objects
         updateObjects()
     }
 
     func updateObjects() {
         log.info("Updating scene")
-        if game.players.count < 2 {
-            // Could probably use more banners for this.
-            log.info("Unable to update scene because no players in game.")
-            waitingBanner?.alpha = 1.0
-            return
+        for player in game.players {
+            log.info("[GameScene] Player: \(player.uuid): \(player.score)")
         }
 
-        if canSendGame {
-            waitingBanner?.alpha = 1.0
-        } else {
-            waitingBanner?.alpha = 0.0
-        }
-
-        /// Assume we have 2 players
-        let player_string: String = "Player: \(game.players[0].score)"
-        let opponent_string: String = "Opponent: \(game.players[1].score)"
-
-        playerLabel?.text = player_string
-        oppenentLabel?.text = opponent_string
-        log.info("Updated scene.")
+        log.info("[GameScene] Current: \(game.players.current.uuid): \(game.players.current.score)")
+        log.info("[GameScene] Yourself: \(game.players.yourself.uuid): \(game.players.yourself.score)")
+        log.info("[GameScene] Your Turn: \(game.players.current == game.players.yourself)")
+        log.info("[GameScene] Player count: \(game.players.count)")
+        log.info("[GameScene] canSendGame: \(game.canSend)")
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -71,16 +57,24 @@ class GameScene: iMessageGame.Scene {
         let location = touch.location(in: self)
         let touchedNode = nodes(at: location)
 
+        log.info("[touchesEnded] [GameScene] canSendGame: \(game.canSend)")
         for node in touchedNode {
-            if node.name == sendTurnButton?.name && canSendGame {
-                if let d = gameDelegate {
-                    /// Update the current score by 1 and switch to next player
-                    game?.players.current.score += 1
-                    game?.players.next()
+            if node.name == sendTurnButton?.name {
+                if !game.canSend {
+                    log.info("Cannot Send the game!")
+                    log.info("Player count: \(game.players.count)")
+                    log.info("Your Turn: \(game.players.current == game.players.yourself)")
+                    continue
+                } else {
+                    if let d = gameDelegate {
+                        /// Update the current score by 1 and switch to next player
+                        game?.players.current.score += 1
+                        game?.players.next()
 
-                    d.send(caption: "Played Turn", summaryText: "Played their turn", withConfirmation: false)
+                        d.send(caption: "Played Turn", summaryText: "Played their turn", withConfirmation: false)
+                        log.info("Sent Game")
+                    }
                 }
-                print("Send turn button Touched!")
             }
         }
     }
